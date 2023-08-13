@@ -46,7 +46,7 @@ public class Directory_Page {
 		int j = 0;
 		List<WebElement> directoryEmpl = driver.findElements(By.xpath("//div[@class='oxd-grid-4']//div//p"));
 		System.out.println(directoryEmpl.size());
-		for (int i = 1; i <= directoryEmpl.size(); i++) {
+		for (int i = 1; i <=10; i++) {
 			Thread.sleep(1000);
 			// System.out.println(j++);
 			// System.out.println(directoryEmpl.get(i).getText()+" "+j++);
@@ -107,7 +107,7 @@ public class Directory_Page {
 		} else {
 			System.out.println(actualset);
 			System.out.println("matching Dropdown values are");
-			for (int j = 1; j <=al.size(); j++) {
+			for (int j = 0; j <=3; j++) {
 				Iterator<String> it = actualset.iterator();
 				if (actualset.contains(al.get(j))) {
 
