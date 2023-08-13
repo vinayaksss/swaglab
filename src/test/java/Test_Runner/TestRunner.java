@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 		tags= "@Directory",
 		dryRun=false,
 		monochrome=true,
-		plugin= {"pretty"})
+		plugin= {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 		
 public class TestRunner {
 
