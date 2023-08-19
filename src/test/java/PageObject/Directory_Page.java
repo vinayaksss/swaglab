@@ -6,21 +6,26 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import Step_Def.Base_Test;
 import Utilities.CommonSteps;
 
-public class Directory_Page {
+public class Directory_Page extends Base_Test {
 	public WebDriver driver;
 	CommonSteps cs = new CommonSteps();
 
+	//public static Logger log ;
 	public Directory_Page(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		//log = (Logger) LogManager.getLogger("");
 	}
 
 	@FindBy(xpath = "//a[@href='/web/index.php/directory/viewDirectory']")
@@ -112,6 +117,7 @@ public class Directory_Page {
 				if (actualset.contains(al.get(j))) {
 
 					System.out.println( al.get(j));
+					//log.info("Logs are working fine");
 
 				}
 
