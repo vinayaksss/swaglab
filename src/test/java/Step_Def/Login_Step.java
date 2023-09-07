@@ -13,7 +13,8 @@ public class Login_Step extends Base_Test{
 	Login_Page lp;
 
 	@Given("Open the SwagLabs UrL")
-	public void open_the_swag_labs_ur_l() {
+	public void open_the_swag_labs_ur_l() throws InterruptedException {
+		Thread.sleep(2000);
 		driver.get("https://www.saucedemo.com/");
 
 

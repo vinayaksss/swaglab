@@ -1,8 +1,14 @@
 package Step_Def;
 
+import java.util.List;
+
+//import java.util.List;
+
+//import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument.List;
 import org.openqa.selenium.WebDriver;
 
 import PageObject.PIM_page;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
@@ -48,7 +54,19 @@ public class PIM_AddEmployee_Step extends Base_Test {
 		pim.searchEmployee();
 	}
 
-
+	@Then("Add the Employee Details")
+	public void add_the_employee_details(DataTable dataTable) throws InterruptedException {
+		//System.out.println(dataTable.cell(4, 0));
+		/*
+		 * List<List<String>> ls=dataTable.asLists(String.class);
+		 * System.out.println(ls.get(2).get(0));
+		 *///ls.get(0).
+		
+		pim.PIM_AddEmplyeeDetailsDataTable(dataTable);
+	
+		
+	    
+	}
 
 
 

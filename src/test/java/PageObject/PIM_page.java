@@ -1,5 +1,7 @@
 package PageObject;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -10,6 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import Step_Def.Base_Test;
 import Utilities.CommonSteps;
+import io.cucumber.datatable.DataTable;
 
 public class PIM_page extends Base_Test{
 String userName;
@@ -65,6 +68,18 @@ String userName;
 
 	}
 
+	
+	public void PIM_AddEmplyeeDetailsDataTable(DataTable table) throws InterruptedException {
+		Thread.sleep(1000);
+		List<List<String>>ls=table.asLists(String.class);
+		for(int i=0;i<=ls.size();i++) {
+		PIM_firstName.sendKeys(ls.get(i).get(0));
+		PIM_firstName.clear();
+		}
+		//PIM_middleName.sendKeys(cs.getSaltString());
+		//PIM_lastName.sendKeys(cs.getSaltString());
+
+	}
 	public void selectPIM() throws InterruptedException {
 		Thread.sleep(2000);
 		PIM_option.click();
